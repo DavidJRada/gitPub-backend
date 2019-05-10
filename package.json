@@ -1,0 +1,26 @@
+{
+  "name": "gitpub-backend",
+  "version": "1.0.0",
+  "description": "Jon Edited this Testing",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DavidJRada/gitPub-backend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DavidJRada/gitPub-backend/issues"
+  },
+  "homepage": "https://github.com/DavidJRada/gitPub-backend#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^8.0.0",
+    "express": "^4.16.4",
+    "mongoose": "^5.5.7"
+  }
+}
