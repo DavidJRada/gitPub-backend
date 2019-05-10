@@ -36,12 +36,17 @@ mongoose.connection.once('open', () => {
 })
 
 
+// Controllers/Routes
+const drinksController = require('./controllers/drinks_controller')
+app.use('/drinks', drinksController)
+
+
 app.get('/', (req, res) => {
     res.send('GitPub')
   })
   
   // Listen
   app.listen(PORT, () => {
-    console.log('🎉🎊', 'celebrations happening on port', PORT, '🎉🎊')
+    console.log('🎉🎊', 'drinking happening on port', PORT, '🎉🎊')
   })
   
