@@ -39,6 +39,8 @@ mongoose.connection.once('open', () => {
 // Controllers/Routes
 const drinksController = require('./controllers/drinks_controller')
 app.use('/drinks', drinksController)
+const foodsController = require('./controllers/foods_controller')
+app.use('/foods', foodsController)
 
 
 app.get('/', (req, res) => {
