@@ -6,6 +6,7 @@ const cors = require('cors')
 const mongoose = require('mongoose')
 require('dotenv').config()
 const MONGODB_URI = 'mongodb://localhost:27017'+ '/gitpub'
+const Drink = require("./models/drinks")
 
 // const whitelist = ['http://localhost:3000', 'https://fathomless-sierra-68956.herokuapp.com']
 // const corsOptions = {
@@ -51,4 +52,33 @@ app.get('/', (req, res) => {
   app.listen(PORT, () => {
     console.log('🎉🎊', 'drinking happening on port', PORT, '🎉🎊')
   })
+
+  // app.get('/seed', async (req, res) => {
+  //   const newDrinks =
+  //     [
+  //       {
+  //         name: 'Beans',
+  //         ingredients: 'A small pile of beans. Buy more beans for a big pile of beans.',
+  //         image: 'https://cdn3.bigcommerce.com/s-a6pgxdjc7w/products/1075/images/967/416130__50605.1467418920.1280.1280.jpg?c=2',
+  //         price: 5
+  //       }, {
+  //         name: 'Bones',
+  //         ingredients: 'It\'s just a bag of bones.',
+  //         image: 'http://bluelips.com/prod_images_large/bones1.jpg',
+  //         price: 25
+  //       }, {
+  //         name: 'Bins',
+  //         ingredients: 'A stack of colorful bins for your beans and bones.',
+  //         image: 'http://www.clipartbest.com/cliparts/9cz/rMM/9czrMMBcE.jpeg',
+  //         price: 7000
+  //       }
+  //     ]
+  
+  //   try {
+  //     const seedItems = await Drink.create(newDrinks)
+  //     res.send(seedItems)
+  //   } catch (err) {
+  //     res.send(err.message)
+  //   }
+  // })  
   
