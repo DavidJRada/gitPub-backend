@@ -21,7 +21,7 @@ const corsOptions = {
 
 //MiddleWare
 app.use(express.json()) // use .json(), not .urlencoded()
-// app.use(cors(corsOptions))
+app.use(cors(corsOptions))
 
 // Error / Disconnection
 mongoose.connection.on('error', err => console.log(err.message + ' is Mongod not running?'))
