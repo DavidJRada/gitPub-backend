@@ -8,7 +8,7 @@ require('dotenv').config()
 const MONGODB_URI = 'mongodb://localhost:27017'+ '/gitpub'
 const Drink = require("./models/drinks")
 
-const whitelist = ['http://localhost:3000', 'https://gitpub-backend.herokuapp.com/']
+const whitelist = ['http://localhost:3000', 'https://gitpub-client.herokuapp.com']
 const corsOptions = {
   origin (origin, callback) {
     if (whitelist.indexOf(origin) !== -1) {
