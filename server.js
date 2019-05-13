@@ -11,7 +11,7 @@ const Drink = require("./models/drinks")
 const whitelist = ['http://localhost:3000', 'https://gitpub-client.herokuapp.com']
 const corsOptions = {
   origin (origin, callback) {
-    if (whitelist.indexOf(origin) !== -1) {
+    if (whitelist.indexOf(origin) !== -1 || !origin) {
       callback(null, true)
     } else {
       callback(new Error('Not allowed by CORS'))
@@ -21,7 +21,7 @@ const corsOptions = {
 
 //MiddleWare
 app.use(express.json()) // use .json(), not .urlencoded()
-// app.use(cors(corsOptions))
+app.use(cors(corsOptions))
 
 // Error / Disconnection
 mongoose.connection.on('error', err => console.log(err.message + ' is Mongod not running?'))
