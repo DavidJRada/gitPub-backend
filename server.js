@@ -1,7 +1,7 @@
 //Dependencies
 const express = require('express')
 const app = express()
-const PORT = 3004
+const PORT =  process.env.PORT || 3004
 const cors = require('cors')
 const mongoose = require('mongoose')
 require('dotenv').config()
@@ -21,7 +21,7 @@ const corsOptions = {
 
 //MiddleWare
 app.use(express.json()) // use .json(), not .urlencoded()
-app.use(cors(corsOptions))
+// app.use(cors(corsOptions))
 
 // Error / Disconnection
 mongoose.connection.on('error', err => console.log(err.message + ' is Mongod not running?'))
