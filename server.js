@@ -11,7 +11,11 @@ const Drink = require("./models/drinks")
 const whitelist = ['http://localhost:3000', 'https://fathomless-sierra-68956.herokuapp.com']
 const corsOptions = {
   origin (origin, callback) {
+<<<<<<< HEAD
     if (whitelist.indexOf(origin) !== -1 || !origin) {
+=======
+    if (whitelist.indexOf(origin) !== -1) {
+>>>>>>> 1a2b72876885d6fe5a0528f81e43425a11ff6543
       callback(null, true)
     } else {
       callback(new Error('Not allowed by CORS'))
