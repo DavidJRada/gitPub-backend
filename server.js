@@ -7,20 +7,20 @@ const mongoose = require('mongoose')
 require('dotenv').config()
 const MONGODB_URI = 'mongodb://localhost:27017'+ '/gitpub'
 
-// const whitelist = ['http://localhost:3000', 'https://fathomless-sierra-68956.herokuapp.com']
-// const corsOptions = {
-//   origin (origin, callback) {
-//     if (whitelist.indexOf(origin) !== -1) {
-//       callback(null, true)
-//     } else {
-//       callback(new Error('Not allowed by CORS'))
-//     }
-//   }
-// }
+const whitelist = ['http://localhost:3000', 'https://fathomless-sierra-68956.herokuapp.com']
+const corsOptions = {
+  origin (origin, callback) {
+    if (whitelist.indexOf(origin) !== -1 || !origin) {
+      callback(null, true)
+    } else {
+      callback(new Error('Not allowed by CORS'))
+    }
+  }
+}
 
 //MiddleWare
 app.use(express.json()) // use .json(), not .urlencoded()
-// app.use(cors(corsOptions))
+app.use(cors(corsOptions))
 
 // Error / Disconnection
 mongoose.connection.on('error', err => console.log(err.message + ' is Mongod not running?'))
