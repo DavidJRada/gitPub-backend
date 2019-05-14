@@ -5,7 +5,8 @@ const PORT =  process.env.PORT || 3004
 const cors = require('cors')
 const mongoose = require('mongoose')
 require('dotenv').config()
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017' + '/gitpub'
+
+const MONGODB_URI ='mongodb://<dbuser>:<dbpassword>@ds155596.mlab.com:55596/heroku_lbztjb4t'|| 'mongodb://localhost:27017'+ '/gitpub' 
 const Drink = require("./models/drinks")
 
 const whitelist = ['http://localhost:3000', 'https://gitpub-client.herokuapp.com']
